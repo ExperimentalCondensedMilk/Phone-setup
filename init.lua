@@ -11,7 +11,20 @@ end
 packer.startup(function(use)
     use 'wbthomason/packer.nvim'          -- Packer itself
     use 'github/copilot.vim'              -- GitHub Copilot
-
+    use 'tpope/vim-dadbod'
+    use { 'kristijanhusak/vim-dadbod-ui' }
+    use { 'kristijanhusak/vim-dadbod-completion' }
+    use 'tpope/vim-surround'              -- Surround text with characters
+    use 'tpope/vim-commentary'            -- Comment out lines
+    use 'tpope/vim-fugitive'              -- Git integration
+    use 'tpope/vim-rails'                 -- Ruby on Rails support
+    use 'tpope/vim-rhubarb'               -- GitHub integration
+    use 'tpope/vim-sensible'              -- Sensible defaults
+    use 'tpope/vim-repeat'                -- Repeat last command
+    use 'tpope/vim-abolish'               -- Abolish text
+    use 'tpope/vim-obsession'             -- Session management
+    use 'tpope/vim-endwise'               -- Automatically add end statements
+    use 'tpope/vim-bundler'               -- Bundler support
     -- Theme Configuration
     use {
         'tanvirtin/monokai.nvim',
@@ -26,7 +39,7 @@ packer.startup(function(use)
     }
     
     -- GitHub Copilot Configuration
-    vim.g.copilot_node_command = "/data/data/com.termux/files/usr/bin/node"
+vim.g.copilot_node_command = "/home/milky/.nvm/versions/node/v22.14.0/bin/node"
 
     -- Treesitter for Syntax Highlighting                    
     use {                                                        
@@ -140,8 +153,8 @@ require("mason-lspconfig").setup({
     ensure_installed = { 
         "ts_ls", "html", "cssls", "pyright", "bashls",
         "jsonls", "yamlls", "lua_ls", "marksman",
-        "rust_analyzer", "dockerls", "svelte",
-        "sqls", "terraformls", "cssmodules_ls", "bashls",
+        "rust_analyzer", "dockerls", "svelte", "sqls",
+        "terraformls", "cssmodules_ls", "bashls",
         "graphql", "tailwindcss", "texlab", "eslint", "vimls"
     }
 })
@@ -152,7 +165,7 @@ local lspconfig = require('lspconfig')
 local lsp_servers = { 
     "ts_ls", "html", "cssls", "pyright", "bashls",
     "jsonls", "yamlls", "lua_ls", "marksman", "rust_analyzer",
-    "dockerls", "svelte", "sqls", "terraformls",
+    "dockerls", "svelte", "terraformls", "sqls",
     "cssmodules_ls", "graphql", "tailwindcss", "texlab", "eslint",
     "vimls"
 }
