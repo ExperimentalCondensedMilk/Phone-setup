@@ -1,0 +1,42 @@
+# Monokai Themed Starship Prompt
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[🍒 PICKING](bold red)'
+
+[git_branch]
+symbol = "🌿 "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+format = '[$all_status]($style) '
+
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+format = 'via [⬢ $version](bold green)'
+
+[python]
+symbol = "🐍 "
+style = "bold cyan"
+format = 'via [🐍 $version](bold cyan)'
+
+[hostname]
+disabled = true
+
+[username]
+disabled = true
+
+[env_var]
+symbol = "🌍 "
+style = "bold green"
+
+[time]
+format = "🕒 $time"
+
+
+[conda]
+format = '[$symbol$environment](dimmed green) '
+symbol = "🅒 "
